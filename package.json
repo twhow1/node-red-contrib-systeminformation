@@ -1,0 +1,20 @@
+{
+    "name": "node-red-contrib-systeminformation",
+    "version": "1.0.0",
+    "description": "Interface for module System Information of Node.",
+    "keywords": ["systeminformation"],
+    "homepage": "https://www.micrologi.com.br",
+    "author": {
+        "name": "Marlon Andrei de Carvalho",
+        "email": "marlon.andrei@micrologi.com.br"
+    },
+    "license": "Apache-2.0",
+    "node-red": {
+        "nodes": {
+            "system": "system.js"
+        }
+    },
+    "dependencies": {
+        "systeminformation": "^4.14.11"
+    }
+}
