@@ -7,7 +7,7 @@ module.exports = function(RED) {
     function CPU(config) {
         RED.nodes.createNode(this,config);        
         var node = this;
-        if(config.prefix == "1") {
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.cpu()
@@ -68,6 +68,7 @@ module.exports = function(RED) {
     function SYSTEM(config) {
         RED.nodes.createNode(this,config);        
         var node = this;
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.system()
@@ -77,6 +78,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.bios()
@@ -86,6 +88,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.baseboard()
@@ -95,6 +98,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "4") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.chassis()
@@ -104,6 +108,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    }
     }    
     RED.nodes.registerType("SYSTEM",SYSTEM);
 
@@ -114,6 +119,7 @@ module.exports = function(RED) {
     function GENERAL(config) {
         RED.nodes.createNode(this,config);        
         var node = this;
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.version()
@@ -123,6 +129,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.time()
@@ -132,6 +139,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.getStaticData()
@@ -141,6 +149,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "4") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.chassis()
@@ -150,6 +159,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    }
     }    
     RED.nodes.registerType("GENERAL",GENERAL);
 
@@ -160,6 +170,7 @@ module.exports = function(RED) {
     function MEMORIA(config) {
         RED.nodes.createNode(this,config);        
         var node = this;
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.mem()
@@ -169,6 +180,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.memLayout()
@@ -178,6 +190,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    }
     }    
     RED.nodes.registerType("MEMORIA",MEMORIA);
 
@@ -226,6 +239,7 @@ module.exports = function(RED) {
     function SO(config) {
         RED.nodes.createNode(this,config);        
         var node = this;
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.osInfo()
@@ -235,6 +249,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.uuid()
@@ -244,6 +259,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.shell()
@@ -253,6 +269,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error)); 
         });
+    } else if (config.prefix == "4") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.versions()
@@ -262,6 +279,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    } else if (config.prefix == "5") {
         node.on('input', function(msg) {
             const si = require('systeminformation');
             si.users()
@@ -271,6 +289,7 @@ module.exports = function(RED) {
            })
             .catch(error => console.error(error));
         });
+    }
     }    
     RED.nodes.registerType("SO",SO);
 
@@ -282,9 +301,8 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.processes()
             .then(datap => {
@@ -292,10 +310,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.fullLoad()
             .then(data3 => {
@@ -303,10 +320,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.currentLoad()
             .then(data4 => {
@@ -314,9 +330,8 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
+    }
     }
 
     RED.nodes.registerType("Processes",ProcessesNode);
@@ -329,9 +344,8 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.diskLayout()
             .then(data5 => {
@@ -339,10 +353,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.blockDevices()
             .then(data6 => {
@@ -350,10 +363,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.disksIO()
             .then(data7 => {
@@ -361,9 +373,8 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
+    }
     }
     RED.nodes.registerType("Disk and FS",DiskNode);
 
@@ -375,9 +386,8 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.fsSize()
             .then(data8 => {
@@ -385,10 +395,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.fsOpenFiles()
             .then(data9 => {
@@ -396,10 +405,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.fsStats()
             .then(data10 => {
@@ -407,9 +415,8 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
+    }
     }
 
     RED.nodes.registerType("File System",FileNode);
@@ -422,9 +429,8 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
+        if (config.prefix == "1") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.networkInterfaces()
             .then(datanet => {
@@ -432,10 +438,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "2") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.networkInterfaceDefault()
             .then(datanet1 => {
@@ -443,10 +448,9 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
+    } else if (config.prefix == "3") {
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.networkConnections()
             .then(datanet2 => {
@@ -454,9 +458,8 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
+    }
     }
 
     RED.nodes.registerType("Network",NetworkNode);
@@ -469,9 +472,7 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.wifiNetworks()
             .then(dataw => {
@@ -479,9 +480,7 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
     }
 
     RED.nodes.registerType("Wifi",WifiNode);
@@ -494,9 +493,7 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.dockerAll()
             .then(datado => {
@@ -504,9 +501,7 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
     }
 
     RED.nodes.registerType("Docker",DockerNode);
@@ -519,9 +514,7 @@ module.exports = function(RED) {
 
         RED.nodes.createNode(this,config);        
         var node = this;
-
         node.on('input', function(msg) {
-            
             const si = require('systeminformation');
             si.VirtualBoxNode()
             .then(datavb => {
@@ -529,9 +522,7 @@ module.exports = function(RED) {
                 node.send(msg);
            })
             .catch(error => console.error(error));
-            
         });
-
     }
 
     RED.nodes.registerType("Virtual Box",VirtualBoxNode);
