@@ -8,7 +8,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""}      				        
+            name: {value:""},
+            prefix: {value:"6"}   				        
         },        
         inputs:1,
         outputs:1,
@@ -34,7 +35,8 @@
                 <option value="2">CPU Flags</option>
                 <option value="3">CPU Cache</option>
                 <option value="4">CPU Current Speed</option>
-                <option value="4">CPU Temperature</option>
+                <option value="5">CPU Temperature</option>
+                <option value="6">ALL</option>
             </select>
     </div>
 </script>
@@ -52,7 +54,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""}             				        
+            name: {value:""},
+            prefix: {value:"5"}            				        
         },        
         inputs:1,
         outputs:1,
@@ -78,6 +81,7 @@
                 <option value="2">Bios</option>
                 <option value="3">Baseboard</option>
                 <option value="4">Chassis</option>
+                <option value="5">ALL</option>
             </select>
     </div>
 </script>
@@ -95,7 +99,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},
+            prefix: {value:"3"}   			        
         },        
        inputs:1,
         outputs:1,
@@ -117,10 +122,9 @@
         <div class="linha2" style="padding:5px;">
             <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
             <select name="node-input-prefix" id="node-input-prefix">
-                <option value="1">Version</option>
-                <option value="2">Time</option>
-                <option value="3">Static Data</option>
-                <option value="4">Chassis</option>
+                <option value="1">Static Data</option>
+                <option value="2">Chassis</option>
+                <option value="3">ALL</option>
             </select>
     </div>
 </script>
@@ -138,7 +142,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},    
+            prefix: {value:"3"}              				        
         },        
         inputs:1,
         outputs:1,
@@ -162,6 +167,7 @@
             <select name="node-input-prefix" id="node-input-prefix">
                 <option value="1">Memory</option>
                 <option value="2">Memory Layout</option>
+                <option value="3">ALL</option>
             </select>
     </div>
 </script>
@@ -179,7 +185,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},  
+            prefix: {value:"1"}                				        
         },        
         inputs:1,
         outputs:1,
@@ -220,6 +227,7 @@
         color:"#3FADB5",
         defaults: {
             name: {value:""},               				        
+            prefix: {value:"1"}   
         },        
         inputs:1,
         outputs:1,
@@ -259,7 +267,8 @@
        category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},    
+            prefix: {value:"6"}              				        
         },        
         inputs:1,
         outputs:1,
@@ -286,6 +295,7 @@
                 <option value="3">Shell</option>
                 <option value="4">Versions</option>
                 <option value="5">Users</option>
+                <option value="6">ALL</option>
             </select>
     </div>
 </script>
@@ -303,7 +313,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},        
+            prefix: {value:"4"}          				        
         },        
         inputs:1,
         outputs:1,
@@ -328,6 +339,7 @@
                 <option value="1">Processes</option>
                 <option value="2">Full Load</option>
                 <option value="3">Current Load</option>
+                <option value="4">ALL</option>
             </select>
     </div>
 </script>
@@ -345,7 +357,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""}, 
+            prefix: {value:"4"}                 				        
         },        
         inputs:1,
         outputs:1,
@@ -370,6 +383,7 @@
                 <option value="1">Disk Layout</option>
                 <option value="2">Block Devices</option>
                 <option value="3">Disk IO</option>
+                <option value="4">ALL</option>
             </select>
     </div>
 </script>
@@ -388,6 +402,7 @@
         color:"#3FADB5",
         defaults: {
             name: {value:""},               				        
+            prefix: {value:"4"}   
         },        
         inputs:1,
         outputs:1,
@@ -412,6 +427,7 @@
                 <option value="1">File Size</option>
                 <option value="2">File Open</option>
                 <option value="3">File Stats</option>
+                <option value="4">ALL</option>
             </select>
     </div>
 </script>
@@ -429,7 +445,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},    
+            prefix: {value:"4"}              				        
         },        
         inputs:1,
         outputs:1,
@@ -454,6 +471,7 @@
                 <option value="1">Network Interfaces</option>
                 <option value="2">Network Interfaces Default</option>
                 <option value="3">Network Connections</option>
+                <option value="4">ALL</option>
             </select>
     </div> 
 </script>
@@ -471,7 +489,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},     
+            prefix: {value:"1"}             				        
         },        
         inputs:1,
         outputs:1,
@@ -510,7 +529,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},    
+            prefix: {value:"1"}              				        
         },        
         inputs:1,
         outputs:1,
@@ -550,7 +570,8 @@
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},               				        
+            name: {value:""},      
+            prefix: {value:"1"}            				        
         },        
         inputs:1,
         outputs:1,
