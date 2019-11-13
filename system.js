@@ -430,4 +430,36 @@ module.exports = function(RED) {
         });
     }
     RED.nodes.registerType("Virtual Box",VirtualBoxNode);
+
+    /*=======================================================================================
+      ========================================= MySql =======================================
+      =======================================================================================*/
+
+    function ConMySql(config){
+        RED.nodes.createNode(this,config);
+        var node = this;
+        node.on('input', function(msg){
+
+            sqlDrives  = "";
+            sqlDrives += "INSERT ";
+            sqlDrives += "INTO inventario_sistema ( ";
+            sqlDrives += "  hostname,";
+            sqlDrives += "  sistema,";
+            sqlDrives += "  plataforma,";
+            sqlDrives += "  bits,";
+            sqlDrives += "  versao ";
+            sqlDrives += ") VALUES ( ";
+            sqlDrives += "\"" + msg.payload.hostname + "\", ";
+            sqlDrives += "\"" + msg.payload.type + "\", ";
+            sqlDrives += "\"" + msg.payload.platform + "\", ";
+            sqlDrives += "\"" + msg.payload.arch + "\", ";
+            sqlDrives += "\"" + msg.payload.release + "\" ";
+            sqlDrives += "); ";
+
+            msg.payload = sqlDrives;
+            msg.topic = sqlDrives;
+            return msg;
+        })
+    }
+    RED.nodes.registerType("ConMySql",ConMySql);
 }

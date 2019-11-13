@@ -602,4 +602,40 @@
    <p>Pega info do Virtual Box.</p>
 </script>
 
+<!--=======================================================================================
+    ===================================== MySql ===========================================
+    =======================================================================================-->
+
+<script type="text/javascript">
+    RED.nodes.registerType('ConMySql',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},      
+            prefix: {value:"1"}            				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"ConMySql";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+    
+<script type="text/x-red" data-template-name="ConMySql">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
+            <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+            <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+    
+<script type="text/x-red" data-help-name="ConMySql">
+   <p>Convert to MySql Code.</p>
+</script>
+
     
