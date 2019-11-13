@@ -110,7 +110,7 @@ module.exports = function(RED) {
         });
     }
     }    
-    RED.nodes.registerType("SYSTEM",SYSTEM);
+    RED.nodes.registerType("System",SYSTEM);
 
     /*=======================================================================================
       ======================================= GENERAL =======================================
@@ -161,7 +161,7 @@ module.exports = function(RED) {
         });
     }
     }    
-    RED.nodes.registerType("GENERAL",GENERAL);
+    RED.nodes.registerType("General",GENERAL);
 
     /*=======================================================================================
       ====================================== MEMORIA ========================================
@@ -192,7 +192,7 @@ module.exports = function(RED) {
         });
     }
     }    
-    RED.nodes.registerType("MEMORIA",MEMORIA);
+    RED.nodes.registerType("Memoria",MEMORIA);
 
     /*=======================================================================================
       ======================================= BATERIA =======================================
@@ -211,7 +211,7 @@ module.exports = function(RED) {
             .catch(error => console.error(error)); 
         });
     }    
-    RED.nodes.registerType("BATERIA",BATERIA);
+    RED.nodes.registerType("Bateria",BATERIA);
 
     /*=======================================================================================
       ========================================= DISPLAY =====================================
@@ -230,7 +230,7 @@ module.exports = function(RED) {
             .catch(error => console.error(error)); 
         });
     }    
-    RED.nodes.registerType("DISPLAY",DISPLAY);
+    RED.nodes.registerType("Display",DISPLAY);
 
     /*=======================================================================================
       =================================== SO ================================================

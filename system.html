@@ -1,10 +1,14 @@
+<!--=======================================================================================
+    ======================================= CPU ===========================================
+    =======================================================================================-->
+
 <script type="text/javascript">
+
     RED.nodes.registerType('CPU',{
         category: 'System Information',
         color:"#3FADB5",
         defaults: {
-            name: {value:""},
-            prefix: {value:""}         				        
+            name: {value:""}      				        
         },        
         inputs:1,
         outputs:1,
@@ -31,9 +35,8 @@
                 <option value="3">CPU Cache</option>
                 <option value="4">CPU Current Speed</option>
                 <option value="4">CPU Temperature</option>
-            </select>     
+            </select>
     </div>
-
 </script>
 
 <script type="text/x-red" data-help-name="CPU">
@@ -41,447 +44,541 @@
 </script>
 
 <!--=======================================================================================
-    ===================================== SYSTEMM =========================================
+    ===================================== SYSTEM =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('System',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""}             				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"System";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('System',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""}             				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"System";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="System">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="System">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">System</option>
+                <option value="2">Bios</option>
+                <option value="3">Baseboard</option>
+                <option value="4">Chassis</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="System">
-        <p>Pega info da System.</p>
-    </script>
+<script type="text/x-red" data-help-name="System">
+    <p>Pega info da System.</p>
+</script>
 
 <!--=======================================================================================
     ===================================== GENERAL =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('General',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"General";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('General',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+       inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"General";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="General">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="General">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Version</option>
+                <option value="2">Time</option>
+                <option value="3">Static Data</option>
+                <option value="4">Chassis</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="General">
-        <p>Pega info da General.</p>
-    </script>
+<script type="text/x-red" data-help-name="General">
+    <p>Pega info da General.</p>
+</script>
 
-    <!--=======================================================================================
+<!--=======================================================================================
     ===================================== MEMORIA =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Memoria',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Memoria";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Memoria',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Memoria";
+        },
+        labelStyle: function() {
+             return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Memoria">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Memoria">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Memory</option>
+                <option value="2">Memory Layout</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="Memoria">
-        <p>Pega info da Memoria.</p>
-    </script>
+<script type="text/x-red" data-help-name="Memoria">
+    <p>Pega info da Memoria.</p>
+</script>
 
-    <!--=======================================================================================
+<!--=======================================================================================
     ===================================== BATERIA =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Bateria',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Bateria";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Bateria',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Bateria";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Bateria">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Bateria">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
-    
-    <script type="text/x-red" data-help-name="Bateria">
-        <p>Pega info da Bateria.</p>
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Battery</option>
+            </select>
+    </div>
+</script>
 
-    <!--=======================================================================================
+<script type="text/x-red" data-help-name="Bateria">
+    <p>Pega info da Bateria.</p>
+</script>
+
+<!--=======================================================================================
     ===================================== DISPLAY =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Display',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Display";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Display',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Display";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Display">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Display">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Display</option>
+            </select>
+    </div> 
+</script>
     
-    <script type="text/x-red" data-help-name="Display">
-        <p>Pega info do Display.</p>
-    </script>
+<script type="text/x-red" data-help-name="Display">
+    <p>Pega info do Display.</p>
+</script>
 
-     <!--=======================================================================================
+<!--=======================================================================================
     ===================================== SO =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('SO',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"SO";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('SO',{
+       category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"SO";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="SO">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="SO">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Info Operating System</option>
+                <option value="2">UUID</option>
+                <option value="3">Shell</option>
+                <option value="4">Versions</option>
+                <option value="5">Users</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="SO">
-        <p>Pega info do SO.</p>
-    </script>
+<script type="text/x-red" data-help-name="SO">
+    <p>Pega info do SO.</p>
+</script>
 
-     <!--=======================================================================================
+<!--=======================================================================================
     ===================================== PROCESSOS DO SO =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Processes',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Processes";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Processes',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Processes";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Processes">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Processes">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Processes</option>
+                <option value="2">Full Load</option>
+                <option value="3">Current Load</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="Processes">
-        <p>Pega info do Processes.</p>
-    </script>
+<script type="text/x-red" data-help-name="Processes">
+    <p>Pega info do Processes.</p>
+</script>
 
-     <!--=======================================================================================
+<!--=======================================================================================
     ===================================== DISK AND FILE SYSTEMS =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Disk and FS',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Disk and FS";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Disk and FS',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Disk and FS";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Disk and FS">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Disk and FS">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
-    
-    <script type="text/x-red" data-help-name="Disk and FS">
-        <p>Pega info da Disk and FS.</p>
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Disk Layout</option>
+                <option value="2">Block Devices</option>
+                <option value="3">Disk IO</option>
+            </select>
+    </div>
+</script>
+ 
+<script type="text/x-red" data-help-name="Disk and FS">
+    <p>Pega info da Disk and FS.</p>
+</script>
 
-     <!--=======================================================================================
+<!--=======================================================================================
     ===================================== FILE NODE =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('File System',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"File System";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('File System',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"File System";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="File System">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="File System">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">File Size</option>
+                <option value="2">File Open</option>
+                <option value="3">File Stats</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="File System">
-        <p>Pega info da File System.</p>
-    </script>
+<script type="text/x-red" data-help-name="File System">
+   <p>Pega info da File System.</p>
+</script>
 
-    <!--=======================================================================================
+<!--=======================================================================================
     ===================================== NETWORK =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Network',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Network";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Network',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Network";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Network">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Network">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Network Interfaces</option>
+                <option value="2">Network Interfaces Default</option>
+                <option value="3">Network Connections</option>
+            </select>
+    </div> 
+</script>
     
-    <script type="text/x-red" data-help-name="Network">
-        <p>Pega info da Network.</p>
-    </script>
+<script type="text/x-red" data-help-name="Network">
+    <p>Pega info da Network.</p>
+</script>
 
-     <!--=======================================================================================
+<!--=======================================================================================
     ===================================== WIFI =========================================
     =======================================================================================-->
 
-    <script type="text/javascript">
-        RED.nodes.registerType('Wifi',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Wifi";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Wifi',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Wifi";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Wifi">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Wifi">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Wifi</option>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="Wifi">
-        <p>Pega info do Wifi.</p>
-    </script>
+<script type="text/x-red" data-help-name="Wifi">
+    <p>Pega info do Wifi.</p>
+</script>
 
-    <!--=======================================================================================
+<!--=======================================================================================
     ===================================== DOCKER =========================================
     =======================================================================================-->
 
-
-    <script type="text/javascript">
-        RED.nodes.registerType('Docker',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Docker";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Docker',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Docker";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Docker">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Docker">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Docker</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="Docker">
-        <p>Pega info do Docker.</p>
-    </script>
+<script type="text/x-red" data-help-name="Docker">
+    <p>Pega info do Docker.</p>
+</script>
 
-     <!--=======================================================================================
+<!--=======================================================================================
     ===================================== Virtual Box =========================================
     =======================================================================================-->
 
-
-    <script type="text/javascript">
-        RED.nodes.registerType('Virtual Box',{
-            category: 'System Information',
-            color:"#3FADB5",
-            defaults: {
-                name: {value:""},               				        
-            },        
-            inputs:1,
-            outputs:1,
-            icon: "icon.png",
-            label: function() {
-                return this.name||"Virtual Box";
-            },
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            }
-        });
-    </script>
+<script type="text/javascript">
+    RED.nodes.registerType('Virtual Box',{
+        category: 'System Information',
+        color:"#3FADB5",
+        defaults: {
+            name: {value:""},               				        
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"Virtual Box";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
     
-    <script type="text/x-red" data-template-name="Virtual Box">
-        <div class="form-row">
+<script type="text/x-red" data-template-name="Virtual Box">
+    <div class="form-row">
+        <div class="linha1" style="padding:5px;">
             <label for="node-input-name"><i class="icon-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
-        </div>  
-    </script>
+        <div class="linha2" style="padding:5px;">
+            <label for="node-input-prefix"><i class="icon-archive"></i> Function</label>
+            <select name="node-input-prefix" id="node-input-prefix">
+                <option value="1">Virtual Box</option>
+            </select>
+    </div>
+</script>
     
-    <script type="text/x-red" data-help-name="Virtual Box">
-        <p>Pega info do Virtual Box.</p>
-    </script>
+<script type="text/x-red" data-help-name="Virtual Box">
+   <p>Pega info do Virtual Box.</p>
+</script>
 
     
