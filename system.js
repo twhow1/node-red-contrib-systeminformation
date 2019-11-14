@@ -441,6 +441,9 @@ module.exports = function(RED) {
         node.on('input', function(msg){
 
             sqlDrives  = "";
+
+
+
             sqlDrives += "INSERT ";
             sqlDrives += "INTO inventario_sistema ( ";
             sqlDrives += "  hostname,";
